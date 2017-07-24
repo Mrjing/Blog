@@ -40,4 +40,11 @@ bubbleSort(arr1);
 console.log(arr1);
 ```
 
+代码耗时:
 ![](http://ostqsmxg6.bkt.clouddn.com/17-7-24/59367892.jpg)
+
+时间复杂度分析:
+平均情况: O(n^2)
+最优情况: O(n)  代码中arr1数组为排序过的情况，只用遍历一次数组就ok了
+最差情况: O(n^2)
+
