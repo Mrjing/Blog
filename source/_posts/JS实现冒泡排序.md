@@ -8,7 +8,7 @@ categories: [算法]
 ---
 ## JS实现冒泡排序 ##
 代码如下:
-```
+```javascript
 function bubbleSort(arr) {
     var temp;
     console.time("冒泡排序耗时");

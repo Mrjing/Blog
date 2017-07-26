@@ -8,7 +8,7 @@ categories: [算法]
 ---
 ## JS实现选择排序 ##
 代码如下:
-```
+```javascript
 function selectionSort(arr) {
     console.time("选择排序耗时");
     var temp;
