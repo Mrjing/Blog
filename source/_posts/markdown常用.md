@@ -23,11 +23,11 @@ categories: [markdown]
 4. 4 | 4. 4
 
 #### 代码区块
+
+```javascript
+var a = 1;//代码
 ```
-  ```
-  var a = 1;//代码
-  ```
-```
+
 
 #### 链接
 ```
