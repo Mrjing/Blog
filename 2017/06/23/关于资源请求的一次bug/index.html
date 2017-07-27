@@ -87,17 +87,14 @@
 
 
 
-<meta name="description" content="由src资源请求导致的一次bug在用node实现一个电影信息展示的网站后台时，遇到了由静态资源发出的请求产生的bug产生过程如下  首先存储了新的电影信息，然后向对应的详情页跳转 1res.redirect(&apos;/movie/&apos; + movie._id);  跳转到详情页路由后，用收到的movie数据进行页面的渲染(其中有一项是显示电影的预告片) 1src=&quot;#&amp;#123;movie.flash&amp;#">
 <meta name="keywords" content="bug,资源请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="src资源请求">
 <meta property="og:url" content="http://www.coderhuang.com/2017/06/23/关于资源请求的一次bug/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="由src资源请求导致的一次bug在用node实现一个电影信息展示的网站后台时，遇到了由静态资源发出的请求产生的bug产生过程如下  首先存储了新的电影信息，然后向对应的详情页跳转 1res.redirect(&apos;/movie/&apos; + movie._id);  跳转到详情页路由后，用收到的movie数据进行页面的渲染(其中有一项是显示电影的预告片) 1src=&quot;#&amp;#123;movie.flash&amp;#">
-<meta property="og:updated_time" content="2017-07-27T14:19:23.550Z">
+<meta property="og:updated_time" content="2017-07-27T15:12:28.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="src资源请求">
-<meta name="twitter:description" content="由src资源请求导致的一次bug在用node实现一个电影信息展示的网站后台时，遇到了由静态资源发出的请求产生的bug产生过程如下  首先存储了新的电影信息，然后向对应的详情页跳转 1res.redirect(&apos;/movie/&apos; + movie._id);  跳转到详情页路由后，用收到的movie数据进行页面的渲染(其中有一项是显示电影的预告片) 1src=&quot;#&amp;#123;movie.flash&amp;#">
 
 
 
@@ -384,7 +381,8 @@
       
 
       
-        <h2 id="由src资源请求导致的一次bug"><a href="#由src资源请求导致的一次bug" class="headerlink" title="由src资源请求导致的一次bug"></a>由src资源请求导致的一次bug</h2><p>在用node实现一个电影信息展示的网站后台时，遇到了由静态资源发出的请求产生的bug<br><em>产生过程如下</em></p>
+        <p></p><p></p><br><a id="more"></a><p></p>
+<h2 id="由src资源请求导致的一次bug"><a href="#由src资源请求导致的一次bug" class="headerlink" title="由src资源请求导致的一次bug"></a>由src资源请求导致的一次bug</h2><p>在用node实现一个电影信息展示的网站后台时，遇到了由静态资源发出的请求产生的bug<br><em>产生过程如下</em></p>
 <ol>
 <li><p>首先存储了新的电影信息，然后向对应的详情页跳转</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.redirect(<span class="string">'/movie/'</span> + movie._id);</div></pre></td></tr></table></figure>
