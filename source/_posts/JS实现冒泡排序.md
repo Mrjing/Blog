@@ -6,7 +6,10 @@ tags:
 - 冒泡排序
 categories: [算法]
 ---
+<p></p>
+<!-- more -->
 ## JS实现冒泡排序 ##
+
 代码如下:
 ```javascript
 function bubbleSort(arr) {

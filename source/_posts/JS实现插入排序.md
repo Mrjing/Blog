@@ -6,6 +6,8 @@ tags:
 - 插入排序
 categories: [算法]
 ---
+<p></p>
+<!-- more -->
 ## JS实现插入排序 ##
 代码如下:
 ```javascript
