@@ -89,12 +89,12 @@
 
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端面试 JS部分 上线和回滚">
-<meta property="og:url" content="http://www.coderhuang.com/2017/07/04/前端面试要点-上线和回滚/index.html">
+<meta property="og:title" content="前端面试 JS部分 性能优化">
+<meta property="og:url" content="http://www.coderhuang.com/2017/07/10/前端面试要点-性能优化/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-07-30T01:18:35.857Z">
+<meta property="og:updated_time" content="2017-07-30T01:24:45.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端面试 JS部分 上线和回滚">
+<meta name="twitter:title" content="前端面试 JS部分 性能优化">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.coderhuang.com/2017/07/04/前端面试要点-上线和回滚/"/>
+  <link rel="canonical" href="http://www.coderhuang.com/2017/07/10/前端面试要点-性能优化/"/>
 
 
 
 
 
-  <title> 前端面试 JS部分 上线和回滚 | Hexo </title>
+  <title> 前端面试 JS部分 性能优化 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +287,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.coderhuang.com/2017/07/04/前端面试要点-上线和回滚/">
+    <link itemprop="mainEntityOfPage" href="http://www.coderhuang.com/2017/07/10/前端面试要点-性能优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Luke Huang">
@@ -308,7 +308,7 @@
             
             
               
-                前端面试 JS部分 上线和回滚
+                前端面试 JS部分 性能优化
               
             
           </h1>
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T19:15:03+08:00">
-                2017-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T19:15:03+08:00">
+                2017-07-10
               </time>
             
 
@@ -382,18 +382,35 @@
 
       
         <p></p><p></p><br><a id="more"></a><p></p>
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="上线和回滚"><a href="#上线和回滚" class="headerlink" title="上线和回滚"></a>上线和回滚</h3><p><em>知识点</em><br><strong> 上线和回滚的基本流程 </strong></p>
-<p><em>不同公司不同</em><br>上线流程要点在于:</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p><em>知识点</em><br>性能优化原则:</p>
 <ul>
-<li>将测试完成的代码提交到git版本库的master分支</li>
-<li>将当前服务器的代码全部打包并记录版本号，备份</li>
-<li>将master分支的代码提交覆盖到线上服务器，生成新版本号</li>
+<li>多使用内存，缓存或其他方法</li>
+<li>减少cpu计算，减少网络请求</li>
 </ul>
-<p>回滚流程要点在于:</p>
+<p><strong> 加载资源优化 </strong></p>
 <ul>
-<li>将当前服务器的代码全部打包并记录版本号，备份</li>
-<li>将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号</li>
+<li>静态资源的压缩合并(如webpack合并js)</li>
+<li>静态资源缓存(通过资源链接名称控制缓存，只有内容改变的时候，才改变链接名<br>称)</li>
+<li>使用CDN让资源加载更快(使用cdn比在自己的服务器上放置资源供用户访问快很多)</li>
+<li>使用SSR后端渲染，数据直接输出到HTML中</li>
 </ul>
+<p><strong> 渲染优化 </strong></p>
+<ul>
+<li>CSS放前面，JS放后面</li>
+<li><p>懒加载(图片懒加载，下拉加载更多)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 先放一张小图快速显示，之后在异步加载大图  --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"img1"</span> <span class="attr">src</span>=<span class="string">"preview.png"</span> <span class="attr">data-realsrc</span>=<span class="string">"abc.png"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> img1 = <span class="built_in">document</span>.getElementById(<span class="string">"img1"</span>)</div><div class="line">  img1.src = img1.getAttribute(<span class="string">'data-realsrc'</span>)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>减少DOM查询，对DOM查询做缓存</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//未缓存DOM查询</span></div><div class="line"><span class="keyword">var</span> i;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>;i &lt; <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>).length;i++)&#123;</div><div class="line">  <span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//缓存了DOM查询</span></div><div class="line"><span class="keyword">var</span> pList = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);</div><div class="line"><span class="keyword">var</span> i;</div><div class="line"><span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; pList.length;i++)&#123;</div><div class="line">  <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>减少DOM操作，多个操作尽量合并在一起执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var listNode = document.getElementById(&apos;list&apos;)</div><div class="line"></div><div class="line">//要插入10个li标签</div><div class="line">var frag = document.createDocumentFragment();</div><div class="line">var x, li;</div><div class="line">for(x = 0;x &lt; 10;x++)&#123;</div><div class="line">  li = document.creatElement(&quot;li&quot;)</div><div class="line">  li.innerHTML = &quot;List item&quot; + x;</div><div class="line">  frag.appendChild(li);</div><div class="line">&#125;</div><div class="line">listNode.appendChild(frag)//一次性插入一个片段</div></pre></td></tr></table></figure>
+</li>
+<li><p>事件节流</p>
+</li>
+<li>尽早执行操作(如使用DOMContentLoaded)</li>
+</ul>
+<p><em>题目</em></p>
 
       
     </div>
@@ -436,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/04/前端面试要点-事件/" rel="next" title="前端面试 JS部分 事件">
-                <i class="fa fa-chevron-left"></i> 前端面试 JS部分 事件
+              <a href="/2017/07/10/前端面试要点-安全性/" rel="next" title="前端面试 JS部分 安全性">
+                <i class="fa fa-chevron-left"></i> 前端面试 JS部分 安全性
               </a>
             
           </div>
@@ -446,8 +463,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/04/前端面试要点-运行环境/" rel="prev" title="前端面试 JS部分 页面加载">
-                前端面试 JS部分 页面加载 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/24/JS实现冒泡排序/" rel="prev" title="JS实现冒泡排序">
+                JS实现冒泡排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -610,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上线和回滚"><span class="nav-number">1.1.</span> <span class="nav-text">上线和回滚</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#性能优化"><span class="nav-number">1.1.</span> <span class="nav-text">性能优化</span></a></li></ol></li></ol></div>
             
 
           </div>
