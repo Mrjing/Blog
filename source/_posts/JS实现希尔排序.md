@@ -6,6 +6,8 @@ tags:
 - 希尔排序
 categories: [算法]
 ---
+<p></p>
+<!-- more -->
 ## JS实现希尔排序 ##
 代码如下:
 ```javascript

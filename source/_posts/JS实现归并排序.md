@@ -6,6 +6,8 @@ tags:
 - 归并排序
 categories: [算法]
 ---
+<p></p>
+<!-- more -->
 ## JS实现归并排序 ##
 代码如下:
 ```javascript

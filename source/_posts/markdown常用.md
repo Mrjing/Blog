@@ -5,7 +5,8 @@ tags:
 - markdown
 categories: [markdown]
 ---
-
+<p></p>
+<!-- more -->
 # # 一级标题
 ## ## 二级标题
 ### ### 三级标题
@@ -24,9 +25,10 @@ categories: [markdown]
 
 #### 代码区块
 
+```javascript
+var a = 1;//代码
 ```
-  var a = 1;//代码
-```
+
 
 
 #### 链接
@@ -58,3 +60,4 @@ categories: [markdown]
 ```
 效果如下
 ***
+

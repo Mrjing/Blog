@@ -6,6 +6,8 @@ tags:
 - 选择排序
 categories: [算法]
 ---
+<p></p>
+<!-- more -->
 ## JS实现选择排序 ##
 代码如下:
 ```javascript
