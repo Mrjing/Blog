@@ -6,6 +6,8 @@ tags:
 - 堆排序
 categories: [算法]
 ---
+<p></p>
+<!-- more -->
 ## JS实现堆排序 ##
 代码如下:
 ```javascript
